@@ -15,6 +15,9 @@ if( !function_exists( 'cvm_embed_video_shortcode' ) ) {
 	 * @return string|void
 	 */
 	function cvm_embed_video_shortcode() {
+		if( !function_exists( 'cvm_is_video' ) ){
+			return;
+		}
 		if ( ! is_singular() || ! cvm_is_video() ) {
 			return;
 		}
